@@ -41,8 +41,11 @@ type HTTPError struct {
 // @BasePath /
 // @schemes http
 func main() {
+
 	e := echo.New()
+
 	e.GET("/swagger/*", echoSwagger.WrapHandler)
+
 	e.GET("/pets", allPet)
 	e.Logger.Fatal(e.Start(":1323"))
 }
